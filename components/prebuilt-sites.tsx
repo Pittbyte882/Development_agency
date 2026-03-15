@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Check, X, Star, Zap, Crown, ArrowRight, Eye, ShoppingCart, Briefcase, Camera, Utensils, Dumbbell, Coffee, ChefHat, UtensilsCrossed, PersonStanding, Leaf, Rocket, Shield, Code, Sparkles, Palette, TrendingUp, Users, Scale, Lightbulb, ShoppingBag } from "lucide-react"
@@ -281,6 +281,13 @@ const packages = [
 export function PrebuiltSites() {
   const [activeTab, setActiveTab] = useState<"ready" | "custom">("ready")
   const [activeCategory, setActiveCategory] = useState("all")
+  useEffect(() => {
+  const handleSwitchTab = (e: CustomEvent) => {
+    setActiveTab(e.detail)
+  }
+  window.addEventListener("switchTab", handleSwitchTab as EventListener)
+  return () => window.removeEventListener("switchTab", handleSwitchTab as EventListener)
+}, [])
 
   const filtered = activeCategory === "all"
     ? prebuiltSites
