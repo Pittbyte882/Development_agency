@@ -2,7 +2,6 @@ import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Stats } from "@/components/stats"
 import { Features } from "@/components/features"
-import { Packages } from "@/components/packages"
 import { PrebuiltSites } from "@/components/prebuilt-sites"
 import { Portfolio } from "@/components/portfolio"
 import { Process } from "@/components/process"
@@ -21,7 +20,6 @@ export default function Home() {
       <Stats />
       <Features />
       <PrebuiltSites />
-      <Packages />
       <Portfolio />
       <Process />
       <Testimonials />

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Check, Star, Zap, Crown, ArrowRight } from "lucide-react"
+import { Check, X, Star, Zap, Crown, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
@@ -15,15 +15,26 @@ const packages = [
     bestFor: "Solo businesses or freelancers",
     delivery: "1–2 weeks",
     popular: false,
+    description: "Perfect for getting your business online fast with a professional template.",
+    industries: ["Restaurants & Cafés", "Personal Trainers", "Photographers", "Local Businesses", "Freelancers"],
+    platforms: ["Webflow", "WordPress"],
     features: [
-      "3–5 custom pages",
+      "Choose from our template library",
+      "Custom colors & branding",
+      "Up to 5 pages",
       "Mobile responsive design",
       "Contact form setup",
       "Basic SEO optimization",
-      "Social media links",
-      "1 round of revisions",
-      "Domain setup assistance",
+      "Google Analytics setup",
+      "Domain & hosting guidance",
+      "2 rounds of revisions",
       "30-day email support",
+    ],
+    notIncluded: [
+      "Custom design from scratch",
+      "E-commerce functionality",
+      "Booking system integration",
+      "Blog setup",
     ],
   },
   {
@@ -34,16 +45,26 @@ const packages = [
     bestFor: "Small businesses",
     delivery: "2–3 weeks",
     popular: true,
+    description: "For growing businesses that need more features, custom sections, and integrations.",
+    industries: ["Gyms & Fitness Studios", "Marketing Agencies", "SaaS Companies", "Recruitment Firms", "Startups"],
+    platforms: ["Webflow", "WordPress", "Shopify"],
     features: [
+      "Everything in Starter",
       "Up to 8 custom pages",
       "Premium custom design",
       "Blog setup & integration",
-      "Google Analytics integration",
+      "Booking system integration",
+      "E-commerce (up to 20 products)",
       "Advanced SEO setup",
       "Social media integration",
-      "2 rounds of revisions",
+      "Newsletter signup (Mailchimp/Klaviyo)",
       "Speed optimization",
+      "3 rounds of revisions",
       "60-day priority support",
+    ],
+    notIncluded: [
+      "Fully custom design from scratch",
+      "Large e-commerce stores",
     ],
   },
   {
@@ -54,18 +75,25 @@ const packages = [
     bestFor: "Established businesses or e-commerce",
     delivery: "4–6 weeks",
     popular: false,
+    description: "A fully custom website built from scratch — unique, powerful, and built to scale.",
+    industries: ["Tech Companies", "Enterprise Startups", "E-Commerce Brands", "Influencers & Creators", "Any Custom Need"],
+    platforms: ["Next.js", "Webflow", "WordPress", "Shopify"],
     features: [
+      "Everything in Professional",
       "Up to 15 pages or full online store",
       "Fully custom, conversion-focused design",
       "E-commerce / payment integration",
-      "Advanced SEO & schema markup",
-      "Speed & performance optimization",
       "Custom animations & interactions",
+      "Advanced SEO & schema markup",
+      "CMS setup (editable by you)",
+      "Performance & load optimization",
+      "Priority support (same-day response)",
       "Unlimited revisions",
-      "30-day post-launch support",
+      "60 days post-launch support",
+      "Free first month maintenance",
       "Training session included",
-      "Priority ongoing support",
     ],
+    notIncluded: [],
   },
 ]
 
@@ -73,7 +101,7 @@ export function Packages() {
   return (
     <section id="packages" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +117,7 @@ export function Packages() {
             <span className="text-primary">Package</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Simple, straightforward pricing with no hidden fees. 
+            Simple, straightforward pricing with no hidden fees.
             Pick the package that fits your needs and budget.
           </p>
         </motion.div>
@@ -117,6 +145,7 @@ export function Packages() {
                 </div>
               )}
 
+              {/* Icon + Name */}
               <div className="flex items-center gap-3 mb-4">
                 <div className={cn(
                   "p-3 rounded-xl",
@@ -127,39 +156,83 @@ export function Packages() {
                 <h3 className="text-2xl font-bold text-foreground">{pkg.name}</h3>
               </div>
 
-              <div className="mb-4">
+              {/* Price */}
+              <div className="mb-2">
                 <span className="text-4xl font-bold text-foreground">{pkg.price}</span>
                 <span className="text-muted-foreground ml-2">starting</span>
               </div>
-              
-              <p className="text-sm text-muted-foreground mb-2">
-                Range: {pkg.priceRange}
-              </p>
-              
-              <div className="flex items-center gap-4 mb-6 text-sm">
+              <p className="text-sm text-muted-foreground mb-2">Range: {pkg.priceRange}</p>
+
+              {/* Description */}
+              <p className="text-sm text-muted-foreground mb-4">{pkg.description}</p>
+
+              {/* Best For */}
+              <div className="flex items-center gap-4 mb-4 text-sm">
                 <span className="text-accent font-medium">Best for: {pkg.bestFor}</span>
               </div>
-              
-              <div className="mb-6 py-3 px-4 rounded-xl bg-secondary/50 text-sm">
+
+              {/* Delivery */}
+              <div className="mb-5 py-3 px-4 rounded-xl bg-secondary/50 text-sm">
                 <span className="text-muted-foreground">Delivery: </span>
                 <span className="text-foreground font-medium">{pkg.delivery}</span>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              {/* Industries */}
+              <div className="mb-5">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  Great for
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  {pkg.industries.map(industry => (
+                    <span
+                      key={industry}
+                      className="text-xs px-2 py-0.5 rounded-md bg-primary/10 text-primary"
+                    >
+                      {industry}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Platforms */}
+              <div className="mb-6">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  Platforms
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  {pkg.platforms.map(platform => (
+                    <span
+                      key={platform}
+                      className="text-xs px-2 py-0.5 rounded-md bg-secondary text-muted-foreground border border-border/50"
+                    >
+                      {platform}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Features */}
+              <ul className="space-y-3 mb-6">
                 {pkg.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
+                {pkg.notIncluded.map((feature, j) => (
+                  <li key={j} className="flex items-start gap-3 opacity-40">
+                    <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
               </ul>
 
               <Link href="#intake-form">
-                <Button 
+                <Button
                   className={cn(
                     "w-full py-6 text-lg group",
-                    pkg.popular 
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
+                    pkg.popular
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
                       : "bg-secondary hover:bg-secondary/80 text-foreground"
                   )}
                 >
@@ -177,7 +250,7 @@ export function Packages() {
           viewport={{ once: true }}
           className="text-center text-muted-foreground mt-12"
         >
-          Not sure which package is right for you?{" "}
+          All packages include a 50% deposit to start. Not sure which is right for you?{" "}
           <Link href="#intake-form" className="text-primary hover:underline font-medium">
             Get a custom quote
           </Link>{" "}

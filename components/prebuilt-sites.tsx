@@ -3,10 +3,11 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Check, ArrowRight, Eye, ShoppingCart, Briefcase, Camera, Utensils, Dumbbell, Coffee, ChefHat, UtensilsCrossed, PersonStanding, Leaf, Rocket, Shield, Code, Sparkles, Palette, TrendingUp, Users, Scale, Lightbulb, ShoppingBag } from "lucide-react"
+import { Check, X, Star, Zap, Crown, ArrowRight, Eye, ShoppingCart, Briefcase, Camera, Utensils, Dumbbell, Coffee, ChefHat, UtensilsCrossed, PersonStanding, Leaf, Rocket, Shield, Code, Sparkles, Palette, TrendingUp, Users, Scale, Lightbulb, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
+// ── CATEGORIES ──────────────────────────────────────────
 const categories = [
   { id: "all", label: "All Templates" },
   { id: "food", label: "Food & Culinary" },
@@ -17,14 +18,13 @@ const categories = [
   { id: "startup", label: "Startups & Business" },
 ]
 
+// ── TEMPLATES ───────────────────────────────────────────
 const prebuiltSites = [
   // Food & Culinary
   {
     id: "restaurant", category: "food",
-    name: "The Grand Table",
-    industry: "Restaurant",
-    icon: Utensils,
-    price: "$599", originalPrice: "$800",
+    name: "The Grand Table", industry: "Restaurant",
+    icon: Utensils, price: "$599", originalPrice: "$800",
     description: "Perfect for restaurants, cafes, and food businesses",
     color: "from-orange-500/20 to-red-500/20",
     features: ["Menu display with photos", "Online reservation form", "Location & hours section", "Photo gallery", "Contact form", "Mobile responsive"],
@@ -32,10 +32,8 @@ const prebuiltSites = [
   },
   {
     id: "cafe", category: "food",
-    name: "Brew & Bloom",
-    industry: "Café",
-    icon: Coffee,
-    price: "$549", originalPrice: "$750",
+    name: "Brew & Bloom", industry: "Café",
+    icon: Coffee, price: "$549", originalPrice: "$750",
     description: "Cozy café site with seasonal menu and online ordering",
     color: "from-amber-500/20 to-yellow-500/20",
     features: ["Seasonal menu display", "Online ordering setup", "Events calendar", "Photo gallery", "Contact form", "Mobile responsive"],
@@ -43,10 +41,8 @@ const prebuiltSites = [
   },
   {
     id: "chef", category: "food",
-    name: "Chef's Table",
-    industry: "Personal Chef",
-    icon: ChefHat,
-    price: "$599", originalPrice: "$800",
+    name: "Chef's Table", industry: "Personal Chef",
+    icon: ChefHat, price: "$599", originalPrice: "$800",
     description: "Sophisticated personal chef portfolio with booking",
     color: "from-green-500/20 to-emerald-500/20",
     features: ["Chef portfolio & bio", "Menu showcase", "Booking form", "Client testimonials", "Contact form", "Mobile responsive"],
@@ -54,10 +50,8 @@ const prebuiltSites = [
   },
   {
     id: "catering", category: "food",
-    name: "Feast & Co",
-    industry: "Catering",
-    icon: UtensilsCrossed,
-    price: "$599", originalPrice: "$800",
+    name: "Feast & Co", industry: "Catering",
+    icon: UtensilsCrossed, price: "$599", originalPrice: "$800",
     description: "Professional catering company with packages and inquiry form",
     color: "from-rose-500/20 to-pink-500/20",
     features: ["Service packages", "Photo gallery", "Inquiry form", "Pricing display", "Contact form", "Mobile responsive"],
@@ -66,10 +60,8 @@ const prebuiltSites = [
   // Health & Fitness
   {
     id: "gym", category: "health",
-    name: "Iron & Grit",
-    industry: "Gym & Fitness",
-    icon: Dumbbell,
-    price: "$599", originalPrice: "$750",
+    name: "Iron & Grit", industry: "Gym & Fitness",
+    icon: Dumbbell, price: "$599", originalPrice: "$750",
     description: "High-energy gym site with membership plans and class schedule",
     color: "from-green-500/20 to-emerald-500/20",
     features: ["Class schedule display", "Membership plans", "Trainer profiles", "Before/after gallery", "Contact form", "Booking integration ready"],
@@ -77,10 +69,8 @@ const prebuiltSites = [
   },
   {
     id: "trainer", category: "health",
-    name: "Peak Performance",
-    industry: "Personal Trainer",
-    icon: PersonStanding,
-    price: "$599", originalPrice: "$750",
+    name: "Peak Performance", industry: "Personal Trainer",
+    icon: PersonStanding, price: "$599", originalPrice: "$750",
     description: "Personal trainer site with transformation gallery and bookings",
     color: "from-blue-500/20 to-indigo-500/20",
     features: ["Trainer bio & credentials", "Program packages", "Transformation gallery", "Booking form", "Contact form", "Mobile responsive"],
@@ -88,10 +78,8 @@ const prebuiltSites = [
   },
   {
     id: "yoga", category: "health",
-    name: "Flow State",
-    industry: "Yoga & Wellness",
-    icon: Leaf,
-    price: "$549", originalPrice: "$750",
+    name: "Flow State", industry: "Yoga & Wellness",
+    icon: Leaf, price: "$549", originalPrice: "$750",
     description: "Calming yoga studio with class bookings and instructor profiles",
     color: "from-teal-500/20 to-cyan-500/20",
     features: ["Class schedule", "Instructor profiles", "Booking system", "Wellness blog", "Contact form", "Mobile responsive"],
@@ -100,10 +88,8 @@ const prebuiltSites = [
   // Tech & SaaS
   {
     id: "saas", category: "tech",
-    name: "LaunchPad",
-    industry: "SaaS",
-    icon: Rocket,
-    price: "$699", originalPrice: "$900",
+    name: "LaunchPad", industry: "SaaS",
+    icon: Rocket, price: "$699", originalPrice: "$900",
     description: "Modern SaaS landing page with pricing, features, and demo CTA",
     color: "from-violet-500/20 to-purple-500/20",
     features: ["Feature showcase", "Pricing tiers", "Demo CTA", "Testimonials", "FAQ section", "Analytics ready"],
@@ -111,10 +97,8 @@ const prebuiltSites = [
   },
   {
     id: "security", category: "tech",
-    name: "SecureStack",
-    industry: "Cybersecurity",
-    icon: Shield,
-    price: "$699", originalPrice: "$900",
+    name: "SecureStack", industry: "Cybersecurity",
+    icon: Shield, price: "$699", originalPrice: "$900",
     description: "Trust-building cybersecurity firm with services and case studies",
     color: "from-green-500/20 to-emerald-500/20",
     features: ["Services showcase", "Case studies", "Trust badges", "Team profiles", "Contact form", "Mobile responsive"],
@@ -122,10 +106,8 @@ const prebuiltSites = [
   },
   {
     id: "software", category: "tech",
-    name: "AppForge",
-    industry: "Software / App Dev",
-    icon: Code,
-    price: "$699", originalPrice: "$900",
+    name: "AppForge", industry: "Software / App Dev",
+    icon: Code, price: "$699", originalPrice: "$900",
     description: "Software company site with product showcase and team profiles",
     color: "from-blue-500/20 to-sky-500/20",
     features: ["Product showcase", "Team profiles", "Portfolio section", "Pricing plans", "Contact form", "Mobile responsive"],
@@ -134,10 +116,8 @@ const prebuiltSites = [
   // Creative & Creators
   {
     id: "photography", category: "creative",
-    name: "Lens & Light",
-    industry: "Photographer",
-    icon: Camera,
-    price: "$549", originalPrice: "$700",
+    name: "Lens & Light", industry: "Photographer",
+    icon: Camera, price: "$549", originalPrice: "$700",
     description: "Stunning photography portfolio with galleries and booking",
     color: "from-amber-500/20 to-orange-500/20",
     features: ["Gallery with lightbox", "About me section", "Services/offerings page", "Testimonials", "Contact form", "Social media links"],
@@ -145,10 +125,8 @@ const prebuiltSites = [
   },
   {
     id: "creator", category: "creative",
-    name: "The Creator Hub",
-    industry: "Influencer / Creator",
-    icon: Sparkles,
-    price: "$549", originalPrice: "$700",
+    name: "The Creator Hub", industry: "Influencer / Creator",
+    icon: Sparkles, price: "$549", originalPrice: "$700",
     description: "Creator site with media kit, brand deals, and social links",
     color: "from-fuchsia-500/20 to-pink-500/20",
     features: ["Media kit page", "Brand partnerships", "Social links hub", "Content showcase", "Contact form", "Mobile responsive"],
@@ -156,10 +134,8 @@ const prebuiltSites = [
   },
   {
     id: "portfolio", category: "creative",
-    name: "Folio Pro",
-    industry: "Portfolio",
-    icon: Palette,
-    price: "$549", originalPrice: "$700",
+    name: "Folio Pro", industry: "Portfolio",
+    icon: Palette, price: "$549", originalPrice: "$700",
     description: "Clean developer or designer portfolio with project showcase",
     color: "from-purple-500/20 to-pink-500/20",
     features: ["Project showcase", "Skills section", "About me page", "Testimonials", "Contact form", "Social media links"],
@@ -168,10 +144,8 @@ const prebuiltSites = [
   // Agency & Professional
   {
     id: "marketing", category: "agency",
-    name: "Amplify Agency",
-    industry: "Marketing Agency",
-    icon: TrendingUp,
-    price: "$649", originalPrice: "$850",
+    name: "Amplify Agency", industry: "Marketing Agency",
+    icon: TrendingUp, price: "$649", originalPrice: "$850",
     description: "Bold marketing agency site with case studies and results",
     color: "from-orange-500/20 to-amber-500/20",
     features: ["Case studies", "Services showcase", "Team profiles", "Client results", "Contact form", "Mobile responsive"],
@@ -179,10 +153,8 @@ const prebuiltSites = [
   },
   {
     id: "recruitment", category: "agency",
-    name: "TalentBridge",
-    industry: "Recruitment Agency",
-    icon: Users,
-    price: "$649", originalPrice: "$850",
+    name: "TalentBridge", industry: "Recruitment Agency",
+    icon: Users, price: "$649", originalPrice: "$850",
     description: "Recruitment agency with job listings and candidate portal",
     color: "from-blue-500/20 to-indigo-500/20",
     features: ["Job listings", "Candidate portal", "Services page", "Team profiles", "Contact form", "Mobile responsive"],
@@ -190,10 +162,8 @@ const prebuiltSites = [
   },
   {
     id: "law", category: "agency",
-    name: "Counsel Pro",
-    industry: "Law Firm",
-    icon: Scale,
-    price: "$649", originalPrice: "$850",
+    name: "Counsel Pro", industry: "Law Firm",
+    icon: Scale, price: "$649", originalPrice: "$850",
     description: "Professional law firm site with practice areas and attorney profiles",
     color: "from-stone-500/20 to-neutral-500/20",
     features: ["Practice areas", "Attorney profiles", "Case results", "FAQ section", "Contact form", "Mobile responsive"],
@@ -202,10 +172,8 @@ const prebuiltSites = [
   // Startups & Business
   {
     id: "startup", category: "startup",
-    name: "Venture Launch",
-    industry: "Startup",
-    icon: Lightbulb,
-    price: "$649", originalPrice: "$850",
+    name: "Venture Launch", industry: "Startup",
+    icon: Lightbulb, price: "$649", originalPrice: "$850",
     description: "Investor-ready startup site with pitch deck and team section",
     color: "from-violet-500/20 to-indigo-500/20",
     features: ["Product pitch section", "Team profiles", "Investor info", "Roadmap display", "Contact form", "Mobile responsive"],
@@ -213,10 +181,8 @@ const prebuiltSites = [
   },
   {
     id: "ecommerce", category: "startup",
-    name: "ShopFront",
-    industry: "E-Commerce",
-    icon: ShoppingBag,
-    price: "$899", originalPrice: "$1,200",
+    name: "ShopFront", industry: "E-Commerce",
+    icon: ShoppingBag, price: "$899", originalPrice: "$1,200",
     description: "Ready-to-sell e-commerce brand site with product showcase",
     color: "from-pink-500/20 to-rose-500/20",
     features: ["Product catalog", "Shopping cart", "Checkout integration", "Customer reviews", "Category filtering", "Inventory management"],
@@ -224,7 +190,96 @@ const prebuiltSites = [
   },
 ]
 
+// ── PACKAGES ────────────────────────────────────────────
+const packages = [
+  {
+    name: "Starter",
+    icon: Zap,
+    price: "$500",
+    priceRange: "$500–$800",
+    bestFor: "Solo businesses or freelancers",
+    delivery: "1–2 weeks",
+    popular: false,
+    description: "Perfect for getting your business online fast with a professional template.",
+    industries: ["Restaurants & Cafés", "Personal Trainers", "Photographers", "Local Businesses", "Freelancers"],
+    platforms: ["Webflow", "WordPress"],
+    features: [
+      "Choose from our template library",
+      "Custom colors & branding",
+      "Up to 5 pages",
+      "Mobile responsive design",
+      "Contact form setup",
+      "Basic SEO optimization",
+      "Google Analytics setup",
+      "Domain & hosting guidance",
+      "2 rounds of revisions",
+      "30-day email support",
+    ],
+    notIncluded: [
+      
+    ],
+  },
+  {
+    name: "Professional",
+    icon: Star,
+    price: "$1,200",
+    priceRange: "$1,200–$2,000",
+    bestFor: "Small businesses",
+    delivery: "2–3 weeks",
+    popular: true,
+    description: "For growing businesses that need more features, custom sections, and integrations.",
+    industries: ["Gyms & Fitness Studios", "Marketing Agencies", "SaaS Companies", "Recruitment Firms", "Startups"],
+    platforms: ["Webflow", "WordPress", "Shopify"],
+    features: [
+      "Everything in Starter",
+      "Up to 8 custom pages",
+      "Premium custom design",
+      "Blog setup & integration",
+      "Booking system integration",
+      "E-commerce (up to 20 products)",
+      "Advanced SEO setup",
+      "Social media integration",
+      "Newsletter signup (Mailchimp/Klaviyo)",
+      "Speed optimization",
+      "3 rounds of revisions",
+      "60-day priority support",
+    ],
+    notIncluded: [
+    ]
+  },
+  {
+    name: "Premium",
+    icon: Crown,
+    price: "$3,000",
+    priceRange: "$3,000–$5,000+",
+    bestFor: "Established businesses or e-commerce",
+    delivery: "4–6 weeks",
+    popular: false,
+    description: "A fully custom website built from scratch — unique, powerful, and built to scale.",
+    industries: ["Tech Companies", "Enterprise Startups", "E-Commerce Brands", "Influencers & Creators", "Any Custom Need"],
+    platforms: ["Next.js", "Webflow", "WordPress", "Shopify"],
+    features: [
+      "Everything in Professional",
+      "Up to 15 pages or full online store",
+      "Fully custom, conversion-focused design",
+      "E-commerce / payment integration",
+      "Custom animations & interactions",
+      "Advanced SEO & schema markup",
+      "CMS setup (editable by you)",
+      "Performance & load optimization",
+      "Priority support (same-day response)",
+      "Unlimited revisions",
+      "60 days post-launch support",
+      "Free first month maintenance",
+      "Training session included",
+    ],
+    notIncluded: [],
+  },
+]
+
+// ── COMPONENT ───────────────────────────────────────────
 export function PrebuiltSites() {
+  const [activeTab, setActiveTab] = useState<"ready" | "custom">("ready")
   const [activeCategory, setActiveCategory] = useState("all")
 
   const filtered = activeCategory === "all"
@@ -232,7 +287,7 @@ export function PrebuiltSites() {
     : prebuiltSites.filter(t => t.category === activeCategory)
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="prebuilt-sites" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -242,145 +297,330 @@ export function PrebuiltSites() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-            Quick Launch
+            Pricing & Templates
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Ready-to-Go{" "}
-            <span className="text-primary">Website Templates</span>
+            Find the Right{" "}
+            <span className="text-primary">Solution for You</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Need to launch fast? Choose from our pre-built templates and be online in days.
-            Each can be customized to match your brand.
+            Choose a ready-made template and launch fast, or go fully custom
+            with a site built from scratch just for you.
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((cat) => (
+        {/* Toggle */}
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex items-center p-1 rounded-full bg-secondary/50 border border-border/50">
             <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeCategory === cat.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-              }`}
+              onClick={() => setActiveTab("ready")}
+              className={cn(
+                "px-8 py-3 rounded-full text-sm font-semibold transition-all",
+                activeTab === "ready"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
             >
-              {cat.label}
+              Ready-Made
             </button>
-          ))}
+            <button
+              onClick={() => setActiveTab("custom")}
+              className={cn(
+                "px-8 py-3 rounded-full text-sm font-semibold transition-all",
+                activeTab === "custom"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Custom Built
+            </button>
+          </div>
         </div>
 
-        {/* Template Grid */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-          >
-            {filtered.map((site, i) => (
-              <motion.div
-                key={site.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                className="group rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 bg-card/50"
-              >
-                {/* Preview Header — exact same structure as original */}
-                <div className={cn(
-                  "aspect-[16/10] bg-gradient-to-br p-4 relative",
-                  site.color
-                )}>
-                  <div className="w-full h-full bg-card/90 rounded-xl border border-border/50 backdrop-blur-sm p-3 flex flex-col">
-                    <div className="flex gap-1.5 mb-2">
-                      <div className="w-2 h-2 rounded-full bg-red-500/50" />
-                      <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
-                      <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                    </div>
-                    <div className="flex-1 flex items-center justify-center">
-                      <site.icon className="w-12 h-12 text-primary/50" />
-                    </div>
-                  </div>
 
-                  {/* Demo Button Overlay */}
-                  <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a
-                      href={site.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+          {/* ── READY-MADE TAB ── */}
+          {activeTab === "ready" && (
+            <motion.div
+              key="ready"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              {/* Category Filter */}
+              <div className="flex flex-wrap justify-center gap-2 mb-10">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      activeCategory === cat.id
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Template Grid */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeCategory}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+                >
+                  {filtered.map((site, i) => (
+                    <motion.div
+                      key={site.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="group rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 bg-card/50"
                     >
-                      <Button variant="outline" size="sm" className="gap-2">
-                        <Eye className="w-4 h-4" />
-                        Preview
-                      </Button>
-                    </a>
-                  </div>
-                </div>
+                      {/* Preview Header */}
+                      <div className={cn(
+                        "aspect-[16/10] bg-gradient-to-br p-4 relative",
+                        site.color
+                      )}>
+                        <div className="w-full h-full bg-card/90 rounded-xl border border-border/50 backdrop-blur-sm p-3 flex flex-col">
+                          <div className="flex gap-1.5 mb-2">
+                            <div className="w-2 h-2 rounded-full bg-red-500/50" />
+                            <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
+                            <div className="w-2 h-2 rounded-full bg-green-500/50" />
+                          </div>
+                          <div className="flex-1 flex items-center justify-center">
+                            <site.icon className="w-12 h-12 text-primary/50" />
+                          </div>
+                        </div>
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <a
+                            href={site.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="outline" size="sm" className="gap-2">
+                              <Eye className="w-4 h-4" />
+                              Preview
+                            </Button>
+                          </a>
+                        </div>
+                      </div>
 
-                {/* Content — exact same structure as original */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-foreground">{site.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground line-through">{site.originalPrice}</span>
-                      <span className="text-xl font-bold text-primary">{site.price}</span>
-                    </div>
-                  </div>
+                      {/* Card Content */}
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-semibold text-foreground">{site.name}</h3>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground line-through">{site.originalPrice}</span>
+                            <span className="text-xl font-bold text-primary">{site.price}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
+                          {site.industry}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-4">{site.description}</p>
+                        <ul className="space-y-2 mb-6">
+                          {site.features.slice(0, 4).map((feature) => (
+                            <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                          {site.features.length > 4 && (
+                            <li className="text-sm text-primary font-medium">
+                              +{site.features.length - 4} more features
+                            </li>
+                          )}
+                        </ul>
+                        <Link href="#intake-form">
+                          <Button className="w-full bg-secondary hover:bg-secondary/80 text-foreground group/btn">
+                            Choose This Template
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
 
-                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
-                    {site.industry}
-                  </p>
-
-                  <p className="text-sm text-muted-foreground mb-4">{site.description}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {site.features.slice(0, 4).map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                    {site.features.length > 4 && (
-                      <li className="text-sm text-primary font-medium">
-                        +{site.features.length - 4} more features
-                      </li>
-                    )}
-                  </ul>
-
-                  <Link href="#intake-form">
-                    <Button className="w-full bg-secondary hover:bg-secondary/80 text-foreground group/btn">
-                      Choose This Template
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
+              {/* Ready-Made Bottom CTA */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-center mt-12"
+              >
+                <p className="text-muted-foreground mb-4">
+                  Want something completely custom?
+                </p>
+                <Button
+                  variant="outline"
+                  className="gap-2"
+                  onClick={() => setActiveTab("custom")}
+                >
+                  View Custom Packages
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
               </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          )}
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-muted-foreground mb-4">
-            Want something completely custom?
-          </p>
-          <Link href="#packages">
-            <Button variant="outline" className="gap-2">
-              View Custom Packages
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
-        </motion.div>
+          {/* ── CUSTOM BUILT TAB ── */}
+          {activeTab === "custom" && (
+            <motion.div
+              key="custom"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {packages.map((pkg, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className={cn(
+                      "relative p-8 rounded-3xl border transition-all duration-300",
+                      pkg.popular
+                        ? "bg-card border-primary shadow-xl shadow-primary/10 scale-105"
+                        : "bg-card/50 border-border/50 hover:border-primary/30"
+                    )}
+                  >
+                    {pkg.popular && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Icon + Name */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={cn(
+                        "p-3 rounded-xl",
+                        pkg.popular ? "bg-primary/20" : "bg-primary/10"
+                      )}>
+                        <pkg.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">{pkg.name}</h3>
+                    </div>
+
+                    {/* Price */}
+                    <div className="mb-2">
+                      <span className="text-4xl font-bold text-foreground">{pkg.price}</span>
+                      <span className="text-muted-foreground ml-2">starting</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-2">Range: {pkg.priceRange}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{pkg.description}</p>
+
+                    {/* Best For */}
+                    <div className="mb-4 text-sm">
+                      <span className="text-accent font-medium">Best for: {pkg.bestFor}</span>
+                    </div>
+
+                    {/* Delivery */}
+                    <div className="mb-5 py-3 px-4 rounded-xl bg-secondary/50 text-sm">
+                      <span className="text-muted-foreground">Delivery: </span>
+                      <span className="text-foreground font-medium">{pkg.delivery}</span>
+                    </div>
+
+                    {/* Industries */}
+                    <div className="mb-5">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Great for</p>
+                      <div className="flex flex-wrap gap-1">
+                        {pkg.industries.map(industry => (
+                          <span key={industry} className="text-xs px-2 py-0.5 rounded-md bg-primary/10 text-primary">
+                            {industry}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Platforms */}
+                    <div className="mb-6">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platforms</p>
+                      <div className="flex flex-wrap gap-1">
+                        {pkg.platforms.map(platform => (
+                          <span key={platform} className="text-xs px-2 py-0.5 rounded-md bg-secondary text-muted-foreground border border-border/50">
+                            {platform}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                                        <ul className="space-y-3 mb-4">
+                      {pkg.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-3">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {pkg.name !== "Premium" && (
+                      <Link
+                        href="/addons"
+                        className="flex items-center gap-2 text-sm text-primary hover:underline mb-6 font-medium"
+                      >
+                        <span>+ View Available Add-Ons</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
+
+
+                    <Link href="#intake-form">
+                      <Button
+                        className={cn(
+                          "w-full py-6 text-lg group",
+                          pkg.popular
+                            ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                            : "bg-secondary hover:bg-secondary/80 text-foreground"
+                        )}
+                      >
+                        Get Started
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Custom Built Bottom Note */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center mt-12 space-y-3"
+            >
+              <p className="text-muted-foreground">
+                All packages include a 50% deposit to start. Not sure which is right for you?{" "}
+                <Link href="/#intake-form" className="text-primary hover:underline font-medium">
+                  Get a custom quote
+                </Link>{" "}
+                tailored to your specific needs.
+              </p>
+              <p className="text-muted-foreground">
+                Want to enhance your package?{" "}
+                <Link href="/addons" className="text-primary hover:underline font-medium">
+                  View all package add-ons →
+                </Link>
+              </p>
+            </motion.div>
+            </motion.div>
+          )}
+
+        </AnimatePresence>
       </div>
     </section>
   )
