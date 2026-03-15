@@ -2,11 +2,24 @@ import { NextResponse } from "next/server"
 import Stripe from "stripe"
 import { stripePlans, PlatformKey, PlanKey, BillingKey } from "@/lib/stripe-plans"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripeKey = process.env.STRIPE_SECRET_KEY
+
+if (!stripeKey) {
+  console.warn("STRIPE_SECRET_KEY is not set")
+}
+
+const stripe = stripeKey ? new Stripe(stripeKey, {
   apiVersion: "2024-06-20",
-})
+}) : null
 
 export async function POST(request: Request) {
+  if (!stripe) {
+    return NextResponse.json(
+      { error: "Stripe is not configured yet" },
+      { status: 503 }
+    )
+  }
+
   try {
     const { platform, plan, billing, customerEmail, customerName } = await request.json()
 
