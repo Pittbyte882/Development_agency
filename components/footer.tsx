@@ -8,9 +8,10 @@ import { Input } from "@/components/ui/input"
 
 const footerLinks = {
   services: [
-    { label: "Starter Package", href: "#packages" },
-    { label: "Professional Package", href: "#packages" },
-    { label: "Premium Package", href: "#packages" },
+    { label: "Starter Package", href: "#prebuilt-sites" },
+    { label: "Professional Package", href: "#prebuilt-sites" },
+    { label: "Premium Package", href: "#prebuilt-sites" },
+    { label: "Package Add-Ons", href: "/addons" },
     { label: "Maintenance Plans", href: "/maintenance" },
     { label: "Custom Solutions", href: "#intake-form" },
   ],
