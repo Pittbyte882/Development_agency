@@ -8,6 +8,7 @@ import { Portfolio } from "@/components/portfolio"
 import { Process } from "@/components/process"
 import { Testimonials } from "@/components/testimonials"
 import { IntakeForm } from "@/components/intake-form"
+import { Contact } from "@/components/contact"
 import { FAQ } from "@/components/faq"
 import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
@@ -25,6 +26,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <IntakeForm />
+      <Contact />
       <FAQ />
       <Footer />
       <FloatingCTA />

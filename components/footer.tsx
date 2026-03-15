@@ -11,6 +11,7 @@ const footerLinks = {
     { label: "Starter Package", href: "#packages" },
     { label: "Professional Package", href: "#packages" },
     { label: "Premium Package", href: "#packages" },
+    { label: "Maintenance Plans", href: "/maintenance" },
     { label: "Custom Solutions", href: "#intake-form" },
   ],
   company: [
@@ -21,7 +22,7 @@ const footerLinks = {
   ],
   support: [
     { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#intake-form" },
+    { label: "Contact", href: "#contact" },
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
   ],
@@ -115,6 +116,7 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
+                  
                 </li>
               ))}
             </ul>
@@ -132,6 +134,7 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
+                  
                 </li>
               ))}
             </ul>
