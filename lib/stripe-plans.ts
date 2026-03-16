@@ -13,15 +13,15 @@ export const stripePlans = {
   },
   wordpress: {
     name: "WordPress",
-    basic:      { monthly: "price_wp_basic_monthly",        yearly: "price_wp_basic_yearly" },
-    growth:     { monthly: "price_wp_growth_monthly",       yearly: "price_wp_growth_yearly" },
-    pro:        { monthly: "price_wp_pro_monthly",          yearly: "price_wp_pro_yearly" },
+    basic:      { monthly: "price_1TBQ7t1YY4jFqJtjBSoDZWSK",        yearly: "price_1TBQ8p1YY4jFqJtjiSCtYpD9" },
+    growth:     { monthly: "price_1TBQAn1YY4jFqJtjsCED8WLT",       yearly: "price_1TBQCD1YY4jFqJtjAXDQxb2G" },
+    pro:        { monthly: "price_1TBQEr1YY4jFqJtjJbHoJhte",          yearly: "price_1TBQG71YY4jFqJtjnY0Hbdjx" },
   },
   shopify: {
     name: "Shopify",
-    basic:      { monthly: "price_shopify_basic_monthly",   yearly: "price_shopify_basic_yearly" },
-    growth:     { monthly: "price_shopify_growth_monthly",  yearly: "price_shopify_growth_yearly" },
-    pro:        { monthly: "price_shopify_pro_monthly",     yearly: "price_shopify_pro_yearly" },
+    basic:      { monthly: "price_1TBQI91YY4jFqJtjBZdEPvSD",   yearly: "price_1TBQIr1YY4jFqJtj8GFefMaQ" },
+    growth:     { monthly: "price_1TBQL81YY4jFqJtj1FeteVwY",  yearly: "price_1TBQLu1YY4jFqJtjyY9oI70A" },
+    pro:        { monthly: "price_1TBQNv1YY4jFqJtjX9g0JAiR",     yearly: "price_1TBQPX1YY4jFqJtjIRFWhLkb" },
   },
 }
 
