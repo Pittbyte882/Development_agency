@@ -27,6 +27,11 @@ const addonCategories = [
       { name: "Custom plugin/app development", price: "$125–$175/hr" },
       { name: "Database setup", price: "$250–$600" },
       { name: "Third-party tool integration", price: "$175–$500" },
+      { name: "Payment gateway setup (Stripe/PayPal/Square)", price: "Contact for quote" },
+      { name: "Shopify store setup & integration", price: "Contact for quote" },
+      { name: "WooCommerce setup & integration", price: "Contact for quote" },
+      { name: "Membership & subscription system", price: "Contact for quote" },
+      { name: "Booking system with payment", price: "Contact for quote" },
     ],
   },
   {

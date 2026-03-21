@@ -496,12 +496,12 @@ export function PrebuiltSites() {
                             </li>
                           )}
                         </ul>
-                        <Link href="#intake-form">
-                          <Button className="w-full bg-secondary hover:bg-secondary/80 text-foreground group/btn">
-                            Choose This Template
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </Button>
-                        </Link>
+                        <Link href={`/order/${site.id}`}>
+                        <Button className="w-full bg-secondary hover:bg-secondary/80 text-foreground group/btn">
+                          Choose This Template
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                       </div>
                     </motion.div>
                   ))}
