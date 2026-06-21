@@ -130,7 +130,7 @@ export default function AddOnsPage() {
                 $250 Minimum Project Fee
               </p>
               <p className="text-sm text-muted-foreground">
-                All add-on projects have a $250 minimum regardless of scope. This covers discovery, communication, setup, testing, and delivery. Add-ons totaling over $250 are billed at their listed price. Hourly rate is $125–$175/hr depending on complexity.
+                All add-on projects have a $250 minimum regardless of scope. This covers discovery, communication, setup, testing, and delivery. Add-ons totaling over $250 are billed at their listed price. Hourly rate is $198–$250/hr depending on complexity.
               </p>
             </div>
           </div>
@@ -178,21 +178,21 @@ export default function AddOnsPage() {
             </h2>
             <p className="text-muted-foreground mb-4">
               Some services are billed hourly based on complexity and time required.
-              All hourly work is scoped and estimated before starting — no surprise bills.
+              All hourly work is scoped and estimated before starting — no surprise bills. These prices are for 1 off fixes, unbugging, add to site or item delection.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="p-4 rounded-2xl bg-secondary/50 text-center">
-                <p className="text-2xl font-black text-primary mb-1">$125/hr</p>
+                <p className="text-2xl font-black text-primary mb-1">$165/hr</p>
                 <p className="text-sm text-muted-foreground">Standard work</p>
                 <p className="text-xs text-muted-foreground mt-1">Updates, content, basic dev</p>
               </div>
               <div className="p-4 rounded-2xl bg-primary/5 border border-primary/20 text-center">
-                <p className="text-2xl font-black text-primary mb-1">$150/hr</p>
+                <p className="text-2xl font-black text-primary mb-1">$195/hr</p>
                 <p className="text-sm text-muted-foreground">Complex work</p>
                 <p className="text-xs text-muted-foreground mt-1">Integrations, custom features</p>
               </div>
               <div className="p-4 rounded-2xl bg-secondary/50 text-center">
-                <p className="text-2xl font-black text-primary mb-1">$175/hr</p>
+                <p className="text-2xl font-black text-primary mb-1">$250/hr</p>
                 <p className="text-sm text-muted-foreground">Advanced work</p>
                 <p className="text-xs text-muted-foreground mt-1">Custom dev, APIs, emergency</p>
               </div>
