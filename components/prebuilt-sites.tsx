@@ -310,7 +310,7 @@ const packages = [
     platforms: ["Next.js", "Webflow", "WordPress", "Shopify"],
     features: [
       "Everything in Professional",
-      "Unlimited pages",
+      " pages",
       "Full custom e-commerce store",
       "Stripe payment integration",
       "Custom animations & micro-interactions",
@@ -319,7 +319,7 @@ const packages = [
       "Comprehensive SEO strategy",
       "Performance & Core Web Vitals optimization",
       "Same-day priority support",
-      "Unlimited revisions",
+      " revisions",
       "90 days post-launch support",
       "Free first month maintenance",
       "1-on-1 training session",

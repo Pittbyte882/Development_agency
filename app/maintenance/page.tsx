@@ -24,8 +24,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 89,
-        yearlyPrice: 1068,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Essential maintenance for custom apps",
         highlight: false,
         features: [
@@ -42,8 +42,8 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 150,
-        yearlyPrice: 1800,
+        monthlyPrice: 285,
+        yearlyPrice: 3420,
         description: "For actively growing businesses",
         highlight: true,
         features: [
@@ -61,13 +61,13 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 250,
-        yearlyPrice: 3000,
+        monthlyPrice: 450,
+        yearlyPrice: 5400,
         description: "Full-service for high-traffic apps",
         highlight: false,
         features: [
           "Everything in Growth",
-          "Unlimited content updates",
+          "content updates",
           "New feature development (2hrs/month)",
           "Same-day support response",
           "Monthly strategy call (30 mins)",
@@ -93,8 +93,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 89,
-        yearlyPrice: 1068,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Keep your Webflow site healthy",
         highlight: false,
         features: [
@@ -109,13 +109,13 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 150,
-        yearlyPrice: 1800,
+        monthlyPrice: 285,
+        yearlyPrice: 3420,
         description: "Most popular for small businesses",
         highlight: true,
         features: [
           "Everything in Basic Care",
-          "Unlimited CMS updates",
+          "CMS updates",
           "2 design tweaks/month",
           "SEO metadata updates",
           "Google Analytics reports",
@@ -127,13 +127,13 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 250,
-        yearlyPrice: 3000,
+        monthlyPrice: 450,
+        yearlyPrice: 5400,
         description: "Complete Webflow management",
         highlight: false,
         features: [
           "Everything in Growth",
-          "Unlimited design updates",
+          "design updates",
           "1 new page/month",
           "E-commerce management",
           "Same-day support response",
@@ -159,8 +159,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 89,
-        yearlyPrice: 1068,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Keep WordPress secure & updated",
         highlight: false,
         features: [
@@ -176,8 +176,8 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 150,
-        yearlyPrice: 1800,
+        monthlyPrice: 285,
+        yearlyPrice: 3420,
         description: "Best for active WordPress sites",
         highlight: true,
         features: [
@@ -195,13 +195,13 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 250,
-        yearlyPrice: 3000,
+        monthlyPrice: 450,
+        yearlyPrice: 5400,
         description: "Full WordPress management",
         highlight: false,
         features: [
           "Everything in Growth",
-          "Unlimited content updates",
+          "content updates",
           "WooCommerce management",
           "Same-day support response",
           "Custom plugin configuration",
@@ -227,8 +227,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 89,
-        yearlyPrice: 1068,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Keep your store running smoothly",
         highlight: false,
         features: [
@@ -244,13 +244,13 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 150,
-        yearlyPrice: 1800,
+        monthlyPrice: 285,
+        yearlyPrice: 3420,
         description: "For growing Shopify stores",
         highlight: true,
         features: [
           "Everything in Basic Care",
-          "Unlimited product updates",
+          " product updates",
           "3 design tweaks/month",
           "Abandoned cart optimization",
           "Google Analytics & Sales reports",
@@ -263,13 +263,13 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 250,
-        yearlyPrice: 3000,
+        monthlyPrice: 450,
+        yearlyPrice: 5400,
         description: "Complete Shopify store management",
         highlight: false,
         features: [
           "Everything in Growth",
-          "Unlimited store updates",
+          "store updates",
           "New landing page/month",
           "Email marketing setup (Klaviyo)",
           "Same-day support response",

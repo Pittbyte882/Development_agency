@@ -88,7 +88,7 @@ const packages = [
       "CMS setup (editable by you)",
       "Performance & load optimization",
       "Priority support (same-day response)",
-      "Unlimited revisions",
+      " revisions",
       "60 days post-launch support",
       "Free first month maintenance",
       "Training session included",
