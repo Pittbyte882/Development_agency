@@ -24,8 +24,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 79,
-        yearlyPrice: 790,
+        monthlyPrice: 89,
+        yearlyPrice: 1068,
         description: "Essential maintenance for custom apps",
         highlight: false,
         features: [
@@ -42,8 +42,8 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 149,
-        yearlyPrice: 1490,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "For actively growing businesses",
         highlight: true,
         features: [
@@ -61,8 +61,8 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 249,
-        yearlyPrice: 2490,
+        monthlyPrice: 250,
+        yearlyPrice: 3000,
         description: "Full-service for high-traffic apps",
         highlight: false,
         features: [
@@ -93,12 +93,11 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 49,
-        yearlyPrice: 490,
+        monthlyPrice: 89,
+        yearlyPrice: 1068,
         description: "Keep your Webflow site healthy",
         highlight: false,
         features: [
-          "CMS content updates (2/month)",
           "Weekly backups",
           "Uptime monitoring",
           "Image optimization",
@@ -110,14 +109,14 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 99,
-        yearlyPrice: 990,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Most popular for small businesses",
         highlight: true,
         features: [
           "Everything in Basic Care",
           "Unlimited CMS updates",
-          "3 design tweaks/month",
+          "2 design tweaks/month",
           "SEO metadata updates",
           "Google Analytics reports",
           "24hr priority support",
@@ -128,8 +127,8 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 199,
-        yearlyPrice: 1990,
+        monthlyPrice: 250,
+        yearlyPrice: 3000,
         description: "Complete Webflow management",
         highlight: false,
         features: [
@@ -160,8 +159,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 49,
-        yearlyPrice: 490,
+        monthlyPrice: 89,
+        yearlyPrice: 1068,
         description: "Keep WordPress secure & updated",
         highlight: false,
         features: [
@@ -177,8 +176,8 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 99,
-        yearlyPrice: 990,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "Best for active WordPress sites",
         highlight: true,
         features: [
@@ -196,8 +195,8 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 199,
-        yearlyPrice: 1990,
+        monthlyPrice: 250,
+        yearlyPrice: 3000,
         description: "Full WordPress management",
         highlight: false,
         features: [
@@ -228,8 +227,8 @@ const plans = {
       {
         key: "basic",
         name: "Basic Care",
-        monthlyPrice: 49,
-        yearlyPrice: 490,
+        monthlyPrice: 89,
+        yearlyPrice: 1068,
         description: "Keep your store running smoothly",
         highlight: false,
         features: [
@@ -245,8 +244,8 @@ const plans = {
       {
         key: "growth",
         name: "Growth Plan",
-        monthlyPrice: 99,
-        yearlyPrice: 990,
+        monthlyPrice: 150,
+        yearlyPrice: 1800,
         description: "For growing Shopify stores",
         highlight: true,
         features: [
@@ -264,8 +263,8 @@ const plans = {
       {
         key: "pro",
         name: "Pro Plan",
-        monthlyPrice: 199,
-        yearlyPrice: 1990,
+        monthlyPrice: 250,
+        yearlyPrice: 3000,
         description: "Complete Shopify store management",
         highlight: false,
         features: [
